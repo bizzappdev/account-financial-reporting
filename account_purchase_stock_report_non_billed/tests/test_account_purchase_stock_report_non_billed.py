@@ -222,8 +222,9 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return = wiz_return_form.save()
+        wiz_return.product_return_moves.write({"quantity": 1.0})
         wiz_return.product_return_moves.to_refund = False
-        return_id = wiz_return.create_returns()["res_id"]
+        return_id = wiz_return.action_create_returns()["res_id"]
         picking_return = self.env["stock.picking"].browse(return_id)
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
@@ -244,7 +245,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return = wiz_return_form.save()
-        return_id = wiz_return.create_returns()["res_id"]
+        wiz_return.product_return_moves.write({"quantity": 1.0})
+        return_id = wiz_return.action_create_returns()["res_id"]
         picking_return = self.env["stock.picking"].browse(return_id)
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
@@ -254,7 +256,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return_return = wiz_return_return_form.save()
-        return_return_id = wiz_return_return.create_returns()["res_id"]
+        wiz_return_return.product_return_moves.write({"quantity": 1.0})
+        return_return_id = wiz_return_return.action_create_returns()["res_id"]
         picking_return_return = self.env["stock.picking"].browse(return_return_id)
         picking_return_return.move_line_ids.write({"quantity": 1})
         picking_return_return.button_validate()
@@ -288,7 +291,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return = wiz_return_form.save()
-        return_id = wiz_return.create_returns()["res_id"]
+        wiz_return.product_return_moves.write({"quantity": 1.0})
+        return_id = wiz_return.action_create_returns()["res_id"]
         picking_return = self.env["stock.picking"].browse(return_id)
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
@@ -298,7 +302,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return_return = wiz_return_return_form.save()
-        return_return_id = wiz_return_return.create_returns()["res_id"]
+        wiz_return_return.product_return_moves.write({"quantity": 1.0})
+        return_return_id = wiz_return_return.action_create_returns()["res_id"]
         picking_return_return = self.env["stock.picking"].browse(return_return_id)
         picking_return_return.move_line_ids.write({"quantity": 1})
         picking_return_return.button_validate()
@@ -332,7 +337,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return = wiz_return_form.save()
-        return_id = wiz_return.create_returns()["res_id"]
+        wiz_return.product_return_moves.write({"quantity": 1.0})
+        return_id = wiz_return.action_create_returns()["res_id"]
         picking_return = self.env["stock.picking"].browse(return_id)
         picking_return.move_line_ids.write({"quantity": 1})
         picking_return.button_validate()
@@ -344,7 +350,8 @@ class TestAccountPurchaseStockReportNonBilled(common.TransactionCase):
             )
         )
         wiz_return_return = wiz_return_return_form.save()
-        return_return_id = wiz_return_return.create_returns()["res_id"]
+        wiz_return_return.product_return_moves.write({"quantity": 1.0})
+        return_return_id = wiz_return_return.action_create_returns()["res_id"]
         picking_return_return = self.env["stock.picking"].browse(return_return_id)
         picking_return_return.move_line_ids.write({"quantity": 1})
         picking_return_return.button_validate()
